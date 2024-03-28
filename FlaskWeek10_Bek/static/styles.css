@@ -1,0 +1,159 @@
+/* global styles applied to all elements (*) */
+* {
+    box-sizing: border-box; /* padding and border included in element's total width and height */
+    padding: 0; /* remove default padding */
+    margin: 0; /* remove default margin */
+}
+
+/*
+Colour scheme from coolors.co for use throughout the website
+#FFBE0B amber
+#FB5607 orange (pantone)
+#FF006E rose
+#8338EC blue violet
+#3A86FF azure
+*/
+
+body {
+    background-color: #F8F8FF; /* hex code for ghostwhite safe colour (off-white as easier on the eyes!) */
+}
+
+.container-wrapper {
+    max-width: 1024px; /* website contained within this width */
+    margin: 0 auto; /* centers the webpage container horizontally */
+    min-height: 100vh; /* content takes at least full height of viewport to make footer stick to the bottom */
+    display: flex; /* use a flexbox container */
+    flex-direction: column; /* apply a vertical direction to flexbox container */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* box shadow gives a 3D effect along edges of webpage container */
+}
+
+nav {
+    font-family: helvetica, sans-serif; /* set a safe font of helvetica or sans-serif if helvetica not available */
+    width: 100%; /* ensure navigation spans full width of browser window */
+    text-align: right; /* align navigation links to the right */
+    padding: 30px 10px; /* adds spacing around navigation links, increasing height of navigation bar */
+    border-bottom: 4px solid #3A86FF; /* adds a horizontal line below the navigation area in azure colour */
+    background-color: #FF006E; /* add a rose colour background */
+
+}
+
+nav a {
+    color: #FFFFFF; /* set colour of menu links to white */
+    font-size: 16px; /* set the font size for mobile */
+    text-shadow: 1px 1px 1px rgba(75, 0, 130, 0.8); /* makes the text 'pop' more by using dark purple for text-shadow with an alpha for transparency */
+    padding: 15px; /* spacing between links */
+}
+
+a {
+    text-decoration: none; /* remove line underneath links */
+}
+
+main {
+    padding: 20px; /* increase spacing around content so it doesn't run up to edge of screen */
+}
+
+section {
+    padding-top: 10px; /* spacing between h1 and content */
+}
+
+.portfolio-item {
+    display: flex; /* use flexbox to modify layout for small screens */
+    flex-direction: column; /* specify a column layout for a mobile first approach */
+    align-items: center; /* centers the container */
+    margin-top: 20px; /* space between border and item above */
+    padding: 20px; /* space between inner content and border */
+    border-radius: 10px; /* rounds the corners of the outer border */
+}
+
+.portfolio-title {
+    margin-bottom: 20px; /* adds space between title and content below */
+    width: 100%; /* ensures title section spans full width */
+    text-align: center; /* centers title text */
+}
+
+.content-container {
+    display: flex; /* use flexbox to modify layout for small screens */
+    flex-direction: column; /* stacks image and text on smaller screens */
+
+}
+
+.colourway-1 {
+    border: 3px solid #8338EC; /* blue violet border */
+}
+
+.colourway-2 {
+    border: 3px solid #3A86FF; /* azure border */
+}
+
+.colourway-2 .portfolio-title h2 {
+    color: #FB5607; /* change colour of h2 text in colourway-2 portfolio section */
+}
+
+footer {
+    font-family: helvetica, sans-serif; /* set a safe font of helvetica or sans-serif if helvetica not available */
+    color: #FFFFFF; /* set colour of footer text to white */
+    font-size: 20px; /* set the font size to be more readable */
+    text-shadow: 1px 1px 1px rgba(75, 0, 130, 0.8); /* makes the text 'pop' more by using dark purple for text-shadow with an alpha for transparency */
+    text-align: center; /* text remains central in browser window */
+    border-top: 4px solid #8338EC; /* add a horizontal line above the navigation area in blue violet colour */
+    background-color: #FB5607; /* add an orange colour background */
+    padding: 20px; /* add spacing around footer text, increasing height of footer */
+    margin-top: auto; /* for sticky footer ensuring it sticks to the bottom of the viewport */
+}
+
+/* only include properties that are the same for all headings rather than duplicating for each element */
+h1, h2 {
+    font-family: baskerville, serif; /* set a safe font of baskerville or serif if baskerville not available */
+    text-align: center; /* text remains central in browser window */
+    text-shadow: /* use text shadow for a 3D effect */
+    1px 1px  rgba(75, 0, 130, 0.8), /* dark purple for text-shadow (complimentary colour) */
+    2px 2px rgba(75, 0, 130, 0.6); /* position second shadow to right and below first with a reduced opacity  */
+}
+
+/* separate properties exclusive to h1 */
+h1 {
+    font-size: 40px; /* make the text larger */
+    color: #FFBE0B; /* amber text colour */
+}
+
+/* separate properties exclusive to h2 */
+h2 {
+    color: #3A86FF /* azure text colour */
+}
+
+p {
+    font-family: helvetica, sans-serif; /* set a safe font of helvetica or sans-serif if helvetica not available */
+    color: #301934; /* a very dark purple to fit with scheme, don't use black as too harsh */
+    font-size: 18px; /* slightly larger font size than default for readability */
+    line-height: 1.5; /* increase line height for readability */
+    margin-bottom: 5px; /* increase space between paragraphs */
+}
+
+.image img {
+    width: 100%; /* make the image responsive within its container */
+    height: auto; /* image height remains in proportion to the width */
+    margin-bottom: 20px; /* add extra space below image */
+}
+
+img {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.15); /* box shadow gives a 3D effect around image */
+}
+
+@media (min-width: 920px) {
+    .content-container {
+        flex-direction: row; /* side by side on larger screens */
+    }
+
+    nav a {
+        font-size: 22px; /* set the font size to be more readable */
+    }
+
+    .image {
+        flex: 1; /* allows the image and text to take up a certain amount of space */
+    }
+
+    .text {
+        padding-left: 20px; /* adds spacing between the image and the text */
+        flex: 1.5; /* allows the text to take up 1.5 times more space than the image */
+    }
+}
