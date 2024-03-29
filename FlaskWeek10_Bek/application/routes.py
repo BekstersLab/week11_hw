@@ -1,6 +1,16 @@
-from flask import render_template, url_for
-
+from flask import render_template, url_for, request, redirect
 from application import app
+
+import mysql.connector
+
+db = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password='Pa$$w0rd',
+    database='week11_hwk'
+)
+
+cursor = db.cursor()
 
 
 # a get route by default, unless specified otherwise
@@ -42,6 +52,35 @@ def contact_page():
     portfolio_url = url_for('portfolio_page')
     contact_url = url_for('contact_page')
     return render_template('contact.html', title='Contact', home_url=home_url, about_url=about_url, portfolio_url=portfolio_url, contact_url=contact_url)
+
+
+@app.route('/contactcomplete')
+def contact_complete():
+    home_url = url_for('home_page')
+    about_url = url_for('about_page')
+    portfolio_url = url_for('portfolio_page')
+    contact_url = url_for('contact_page')
+    return render_template('contact_complete.html', title='Contact Complete', home_url=home_url, about_url=about_url, portfolio_url=portfolio_url, contact_url=contact_url)
+
+
+@app.route('/contact', methods=['POST'])
+def submit_contact_form():
+        if request.method == 'POST':
+            firstname = request.form['fname']
+            lastname = request.form['lname']
+            email = request.form['email']
+            comments = request.form['comments']
+
+            # Insert data into the users table
+            sql = "INSERT INTO contact_information (firstname, lastname, email, comments) VALUES (%s, %s,%s, %s)"
+            values = (firstname, lastname, email, comments)
+
+            cursor.execute(sql, values)
+            db.commit()
+
+            return redirect(url_for('contact_complete'))
+
+        return 'Invalid request'
 
 
 # repeat the structure for portfolio_page

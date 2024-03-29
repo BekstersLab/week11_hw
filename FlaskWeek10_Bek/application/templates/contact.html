@@ -3,7 +3,20 @@
     <main>
         <h1>Contact Page</h1>
         <section>
-            <p>Get in touch with us via the form below...</p>
+            <div class="container-fluid">
+                <p>Get in touch with us via the form below...</p>
+                <form action="{{ url_for('submit_contact_form')}}" target="_self" autocomplete="on" method="post">
+                    <label for="fname">First name:</label><br>
+                    <input type="text" id="fname" name="fname"><br>
+                    <label for="lname">Last name:</label><br>
+                    <input type="text" id="lname" name="lname"><br>
+                    <label for="email">Email address: </label><br>
+                    <input type="text" id="email" name="email"><br>
+                    <label for="comments">Enter your request: </label><br>
+                    <textarea id="comments" name="comments" rows="10" cols="30"></textarea><br>
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
         </section>
     </main>
 {% endblock %}
