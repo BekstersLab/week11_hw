@@ -1,13 +1,16 @@
 from flask import render_template, url_for, request, redirect
 from application import app
+from datetime import datetime
+from application.utilities import get_time_slot
 
 import mysql.connector
 
 db = mysql.connector.connect(
     host="localhost",
     user="root",
-    password='Pa$$w0rd',
-    database='week11_hwk'
+    # password="Pa$$w0rd",  # use for windows
+    password="",  # use for mac
+    database="week11_hwk"
 )
 
 cursor = db.cursor()
@@ -25,12 +28,14 @@ def home_page():  # define function called when root or /home url is accessed
     about_url = url_for('about_page')  # generates url for about page
     portfolio_url = url_for('portfolio_page')  # generates url for portfolio page
     contact_url = url_for('contact_page')  # generates url for contact page
-
     # within this function, 'home_url = url_for('home_page')' generates an url path for the home_page function and ...
     # assigns it to the home_url variable. The url path corresponds to '@app.route('/')' or '@app.route(/home)' decorator
     # the variables are used to create hyperlinks (<a></a>) within the navigation section of each page
     # e.g. '{home_url}' is replaced with the generated url for the home page when Python code is executed
-    return render_template('home.html', title='Home', home_url=home_url, about_url=about_url, portfolio_url=portfolio_url, contact_url=contact_url)
+
+    time_now = datetime.now()
+    time_slot = get_time_slot(time_now.hour)
+    return render_template('home.html', title='Home', time_slot=time_slot, home_url=home_url, about_url=about_url, portfolio_url=portfolio_url, contact_url=contact_url)
 
 
 # structure is similar for about_page
