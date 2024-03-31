@@ -67,26 +67,50 @@ section {
 
 /* ////// NAVIGATION ////// */
 
-nav {
-    font-family: "Montserrat", sans-serif; /* set a Google font of Montserrat or sans-serif if not available */
-    font-weight: 600;
-    width: 100%; /* ensure navigation spans full width of browser window */
-    text-align: right; /* align navigation links to the right */
-    padding: 30px 10px; /* adds spacing around navigation links, increasing height of navigation bar */
+.my-navbar {
     border-bottom: 4px solid #3A86FF; /* adds a horizontal line below the navigation area in azure colour */
     background-color: #FF006E; /* add a rose colour background */
-
 }
 
-nav a {
+.my-navbar a {
+    font-family: "Montserrat", sans-serif; /* set a Google font of Montserrat or sans-serif if not available */
+    font-weight: 600;
     color: #FFFFFF; /* set colour of menu links to white */
     font-size: 16px; /* set the font size for mobile */
     text-shadow: 1px 1px 1px rgba(75, 0, 130, 0.8); /* makes the text 'pop' more by using dark purple for text-shadow with an alpha for transparency */
     padding: 15px; /* spacing between links */
+    text-decoration: none; /* remove line underneath links */
 }
 
-a {
-    text-decoration: none; /* remove line underneath links */
+.my-navbar .navbar-brand {
+    font-family: "Montserrat", sans-serif; /* set a Google font of Montserrat or sans-serif if not available */
+    font-weight: 600;
+    font-size: 30px; /* set the font size for mobile */
+}
+
+.my-navbar .nav-link:hover {
+    color: #3A86FF;
+}
+
+.navbar-toggler {
+  border-color: rgba(255,255,255,0.5); /* changes the border color of the button to white */
+}
+
+.navbar-toggler:focus, .navbar-toggler:active {
+  box-shadow: none; /* removes the box-shadow that appears on active */
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.8)' stroke-width='4' stroke-linecap='round' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.dropdown-menu {
+    background-color: #FF006E;
+}
+
+.dropdown-menu .dropdown-item:hover {
+  background-color: #FB5607; /* rose */
+  color: #3A86FF; /* azure */
 }
 
 
@@ -151,7 +175,7 @@ li {
 }
 
 li::marker {
-    color: #FB5607; /* orange */
+    color: #FB5607; /* orange bullet points */
 }
 
 
@@ -223,7 +247,7 @@ input[type="submit"]:hover {
     margin: 10px 40px;
     }
 
-    nav a {
+    .my-navbar a {
         font-size: 22px;
     }
 
@@ -240,7 +264,6 @@ input[type="submit"]:hover {
         flex: 1.5;
     }
 }
-
 
 
 
