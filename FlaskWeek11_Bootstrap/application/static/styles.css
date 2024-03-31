@@ -213,7 +213,7 @@ input[type="submit"]:hover {
 
 
 /* ////// MEDIA QUERIES ////// */
-/*
+
 @media (min-width: 920px) {
     .content-container {
         flex-direction: row;
@@ -221,7 +221,7 @@ input[type="submit"]:hover {
 
     .portfolio-item {
     margin: 10px 40px;
-}
+    }
 
     nav a {
         font-size: 22px;
@@ -240,7 +240,6 @@ input[type="submit"]:hover {
         flex: 1.5;
     }
 }
-*/
 
 
 
