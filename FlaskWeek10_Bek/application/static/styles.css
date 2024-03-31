@@ -171,6 +171,7 @@ img {
 /* ////// CONTACT FORM ////// */
 
 form {
+  font-family: "Lato", sans-serif; /* set a Google font of Lato or sans-serif if not available */
   padding: 20px;
   margin: 0 auto;
   max-width: 500px;
