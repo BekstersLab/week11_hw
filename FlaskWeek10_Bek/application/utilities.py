@@ -1,7 +1,7 @@
 def get_time_slot(time):
     if time < 12:
-        return "Morning"
-    elif time < 16:
-        return "Afternoon"
+        return "morning"
+    elif time < 18:
+        return "afternoon"
     else:
-        return "Evening"
+        return "evening"

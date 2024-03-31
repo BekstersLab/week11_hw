@@ -3,8 +3,8 @@
     <main>
         <h1>Contact Page</h1>
         <section>
-            <div class="container-fluid">
-                <p>Get in touch with us via the form below...</p>
+            <p id="central-text">Get in touch with us via the form below...</p>
+            <br>
                 <form action="{{ url_for('submit_contact_form')}}" target="_self" autocomplete="on" method="post">
                     <label for="fname">First name:</label><br>
                     <input type="text" id="fname" name="fname"><br>
@@ -16,7 +16,6 @@
                     <textarea id="comments" name="comments" rows="10" cols="30"></textarea><br>
                     <input type="submit" value="Submit">
                 </form>
-            </div>
         </section>
     </main>
 {% endblock %}

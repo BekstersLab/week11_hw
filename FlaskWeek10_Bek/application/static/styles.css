@@ -15,10 +15,14 @@ Colour scheme from coolors.co for use throughout the website
 */
 
 body {
-    background-color: #F8F8FF; /* hex code for ghostwhite safe colour (off-white as easier on the eyes!) */
+    background-color: #FFF; /* hex code for white */
 }
 
+
+/* ////// CONTENT AREAS ////// */
+
 .container-wrapper {
+    background-color: #F8F8FF; /* hex code for ghostwhite safe colour (off-white as easier on the eyes!) */
     max-width: 1024px; /* website contained within this width */
     margin: 0 auto; /* centers the webpage container horizontally */
     min-height: 100vh; /* content takes at least full height of viewport to make footer stick to the bottom */
@@ -26,6 +30,50 @@ body {
     flex-direction: column; /* apply a vertical direction to flexbox container */
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* box shadow gives a 3D effect along edges of webpage container */
 }
+
+main {
+    padding: 20px; /* increase spacing around content so it doesn't run up to edge of screen */
+}
+
+section {
+    padding-top: 10px; /* spacing between h1 and content */
+}
+
+.portfolio-item {
+    display: flex; /* use flexbox to modify layout for small screens */
+    flex-direction: column; /* specify a column layout for a mobile first approach */
+    align-items: center; /* centers the container */
+    margin: 10px 20px; /* space between border and top/bottom, left/right */
+    padding: 20px; /* space between inner content and border */
+    border-radius: 10px; /* rounds the corners of the outer border */
+}
+
+.portfolio-title {
+    margin-bottom: 20px; /* adds space between title and content below */
+    width: 100%; /* ensures title section spans full width */
+    text-align: center; /* centers title text */
+}
+
+/* used for sections on portfolio page - aligning image and text correctly */
+.content-container {
+    display: flex; /* use flexbox to modify layout for small screens */
+    flex-direction: column; /* stacks image and text on smaller screens */
+}
+
+.colourway-1 {
+    border: 3px solid #8338EC; /* blue violet border */
+}
+
+.colourway-2 {
+    border: 3px solid #3A86FF; /* azure border */
+}
+
+.colourway-2 .portfolio-title h2 {
+    color: #FB5607; /* change colour of h2 text in colourway-2 portfolio section */
+}
+
+
+/* ////// NAVIGATION ////// */
 
 nav {
     font-family: helvetica, sans-serif; /* set a safe font of helvetica or sans-serif if helvetica not available */
@@ -48,51 +96,13 @@ a {
     text-decoration: none; /* remove line underneath links */
 }
 
-main {
-    padding: 20px; /* increase spacing around content so it doesn't run up to edge of screen */
-}
 
-section {
-    padding-top: 10px; /* spacing between h1 and content */
-}
-
-.portfolio-item {
-    display: flex; /* use flexbox to modify layout for small screens */
-    flex-direction: column; /* specify a column layout for a mobile first approach */
-    align-items: center; /* centers the container */
-    margin-top: 20px; /* space between border and item above */
-    padding: 20px; /* space between inner content and border */
-    border-radius: 10px; /* rounds the corners of the outer border */
-}
-
-.portfolio-title {
-    margin-bottom: 20px; /* adds space between title and content below */
-    width: 100%; /* ensures title section spans full width */
-    text-align: center; /* centers title text */
-}
-
-.content-container {
-    display: flex; /* use flexbox to modify layout for small screens */
-    flex-direction: column; /* stacks image and text on smaller screens */
-
-}
-
-.colourway-1 {
-    border: 3px solid #8338EC; /* blue violet border */
-}
-
-.colourway-2 {
-    border: 3px solid #3A86FF; /* azure border */
-}
-
-.colourway-2 .portfolio-title h2 {
-    color: #FB5607; /* change colour of h2 text in colourway-2 portfolio section */
-}
+/* ////// FOOTER ////// */
 
 footer {
     font-family: helvetica, sans-serif; /* set a safe font of helvetica or sans-serif if helvetica not available */
     color: #FFFFFF; /* set colour of footer text to white */
-    font-size: 20px; /* set the font size to be more readable */
+    font-size: 16px; /* set the font size to be more readable */
     text-shadow: 1px 1px 1px rgba(75, 0, 130, 0.8); /* makes the text 'pop' more by using dark purple for text-shadow with an alpha for transparency */
     text-align: center; /* text remains central in browser window */
     border-top: 4px solid #8338EC; /* add a horizontal line above the navigation area in blue violet colour */
@@ -100,6 +110,9 @@ footer {
     padding: 20px; /* add spacing around footer text, increasing height of footer */
     margin-top: auto; /* for sticky footer ensuring it sticks to the bottom of the viewport */
 }
+
+
+/* ////// TEXT/LISTS ////// */
 
 /* only include properties that are the same for all headings rather than duplicating for each element */
 h1, h2 {
@@ -114,6 +127,7 @@ h1, h2 {
 h1 {
     font-size: 40px; /* make the text larger */
     color: #FFBE0B; /* amber text colour */
+    margin-bottom: 20px;
 }
 
 /* separate properties exclusive to h2 */
@@ -121,13 +135,25 @@ h2 {
     color: #3A86FF /* azure text colour */
 }
 
-p {
+p, ul {
     font-family: helvetica, sans-serif; /* set a safe font of helvetica or sans-serif if helvetica not available */
     color: #301934; /* a very dark purple to fit with scheme, don't use black as too harsh */
     font-size: 18px; /* slightly larger font size than default for readability */
     line-height: 1.5; /* increase line height for readability */
-    margin-bottom: 5px; /* increase space between paragraphs */
+    margin-bottom: 15px; /* increase space between paragraphs */
 }
+
+#central-text {
+  text-align: center;
+}
+
+ul {
+    margin: 15px 0; /* same spacing as paragraphs */
+    list-style-position: inside;
+}
+
+
+/* ////// IMAGES ////// */
 
 .image img {
     width: 100%; /* make the image responsive within its container */
@@ -139,13 +165,66 @@ img {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.15); /* box shadow gives a 3D effect around image */
 }
 
+
+/* ////// CONTACT FORM ////// */
+
+form {
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 500px;
+  border: 1px solid #8338EC; /* blue violet colour */
+  border-radius: 5px;
+  background-color: #FCFCFF;
+}
+
+label {
+  display: block;
+  margin-top: 20px;
+  color: #301934; /* a very dark purple to fit with scheme, don't use black as too harsh */
+  font-size: 18px;
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 8px; /* give height to text box, space around text input */
+  margin-bottom: 10px;
+  border: 2px solid #FB5607; /* orange colour */
+  border-radius: 4px; /* round the borders */
+  font-size: 16px;
+}
+
+input[type="submit"] {
+  background-color: #FF006E; /* rose colour */
+  color: #FFF; /* white */
+  padding: 14px 20px;
+  border: none; /* remove default border */
+  border-radius: 4px; /* round the borders */
+  cursor: pointer; /* changes to the pointing finger */
+}
+
+input[type="submit"]:hover {
+  background-color: #3A86FF /* changes to azure colour on hover */
+}
+
+
+/* ////// MEDIA QUERIES ////// */
+
 @media (min-width: 920px) {
     .content-container {
         flex-direction: row; /* side by side on larger screens */
     }
 
+    .portfolio-item {
+    margin: 10px 40px; /* space between border and top/bottom, left/right */
+}
+
     nav a {
         font-size: 22px; /* set the font size to be more readable */
+    }
+
+    p, ul {
+        padding: 0 40px;
     }
 
     .image {
