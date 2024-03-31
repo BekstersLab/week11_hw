@@ -1,10 +1,3 @@
-/* global styles applied to all elements (*) */
-* {
-    box-sizing: border-box; /* padding and border included in element's total width and height */
-    padding: 0; /* remove default padding */
-    margin: 0; /* remove default margin */
-}
-
 /*
 Colour scheme from coolors.co for use throughout the website
 #FFBE0B amber
@@ -18,10 +11,9 @@ body {
     background-color: #FFF; /* hex code for white */
 }
 
-
 /* ////// CONTENT AREAS ////// */
 
-.container-wrapper {
+.my-container {
     background-color: #F8F8FF; /* hex code for ghostwhite safe colour (off-white as easier on the eyes!) */
     max-width: 1024px; /* website contained within this width */
     margin: 0 auto; /* centers the webpage container horizontally */
@@ -219,19 +211,20 @@ input[type="submit"]:hover {
 }
 
 
-/* ////// MEDIA QUERIES ////// */
 
+/* ////// MEDIA QUERIES ////// */
+/*
 @media (min-width: 920px) {
     .content-container {
-        flex-direction: row; /* side by side on larger screens */
+        flex-direction: row;
     }
 
     .portfolio-item {
-    margin: 10px 40px; /* space between border and top/bottom, left/right */
+    margin: 10px 40px;
 }
 
     nav a {
-        font-size: 22px; /* set the font size to be more readable */
+        font-size: 22px;
     }
 
     p, ul {
@@ -239,11 +232,17 @@ input[type="submit"]:hover {
     }
 
     .image {
-        flex: 1; /* allows the image and text to take up a certain amount of space */
+        flex: 1;
     }
 
     .text {
-        padding-left: 20px; /* adds spacing between the image and the text */
-        flex: 1.5; /* allows the text to take up 1.5 times more space than the image */
+        padding-left: 20px;
+        flex: 1.5;
     }
 }
+*/
+
+
+
+
+
