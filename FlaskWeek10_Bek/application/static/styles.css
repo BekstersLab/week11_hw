@@ -76,7 +76,8 @@ section {
 /* ////// NAVIGATION ////// */
 
 nav {
-    font-family: helvetica, sans-serif; /* set a safe font of helvetica or sans-serif if helvetica not available */
+    font-family: "Montserrat", sans-serif; /* set a Google font of Montserrat or sans-serif if not available */
+    font-weight: 600;
     width: 100%; /* ensure navigation spans full width of browser window */
     text-align: right; /* align navigation links to the right */
     padding: 30px 10px; /* adds spacing around navigation links, increasing height of navigation bar */
@@ -100,7 +101,8 @@ a {
 /* ////// FOOTER ////// */
 
 footer {
-    font-family: helvetica, sans-serif; /* set a safe font of helvetica or sans-serif if helvetica not available */
+    font-family: "Montserrat", sans-serif; /* set a Google font of Montserrat or sans-serif if not available */
+    font-weight: 500;
     color: #FFFFFF; /* set colour of footer text to white */
     font-size: 16px; /* set the font size to be more readable */
     text-shadow: 1px 1px 1px rgba(75, 0, 130, 0.8); /* makes the text 'pop' more by using dark purple for text-shadow with an alpha for transparency */
@@ -115,8 +117,8 @@ footer {
 /* ////// TEXT/LISTS ////// */
 
 /* only include properties that are the same for all headings rather than duplicating for each element */
-h1, h2 {
-    font-family: baskerville, serif; /* set a safe font of baskerville or serif if baskerville not available */
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Montserrat", sans-serif; /* set a Google font of Montserrat or serif if not available */
     text-align: center; /* text remains central in browser window */
     text-shadow: /* use text shadow for a 3D effect */
     1px 1px  rgba(75, 0, 130, 0.8), /* dark purple for text-shadow (complimentary colour) */
@@ -136,7 +138,7 @@ h2 {
 }
 
 p, ul {
-    font-family: helvetica, sans-serif; /* set a safe font of helvetica or sans-serif if helvetica not available */
+    font-family: "Lato", sans-serif; /* set a Google font of Lato or sans-serif if not available */
     color: #301934; /* a very dark purple to fit with scheme, don't use black as too harsh */
     font-size: 18px; /* slightly larger font size than default for readability */
     line-height: 1.5; /* increase line height for readability */
