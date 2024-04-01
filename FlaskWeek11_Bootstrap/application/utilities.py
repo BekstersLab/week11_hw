@@ -10,15 +10,18 @@ def get_time_slot(time):
         return "evening"
 
 
-# Function to get team member and their projects from MySQL
+# Function to get the data for each portfolio row for a user in the portfolio db
 def get_portfolio_user(portfoliouser):
+    # connect to the database
     connection = mysql.connector.connect(
         host="localhost",
         user="root",
-        # password="Pa$$w0rd",  # use for windows
-        password="",  # use for mac
+        password="Pa$$w0rd",  # use for windows
+        # password="",  # use for mac
         database="week11_hwk"
     )
+    # flask interacting with mysql db
+    # returns the data from a query into a list of dictionary's
     cursor = connection.cursor(dictionary=True)
     sql = """
     SELECT Portfoliouser, 
@@ -33,6 +36,7 @@ def get_portfolio_user(portfoliouser):
     WHERE portfoliouser = %s
     """
     cursor.execute(sql, (portfoliouser,))
+    # fetches all the rows
     result_set = cursor.fetchall()
     return result_set
 

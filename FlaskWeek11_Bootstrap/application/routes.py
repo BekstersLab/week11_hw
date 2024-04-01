@@ -10,8 +10,8 @@ from FlaskWeek11_Bootstrap.application.utilities import get_portfolio_user
 db = mysql.connector.connect(
     host="localhost",
     user="root",
-    # password="Pa$$w0rd",  # use for windows
-    password="",  # use for mac
+    password="Pa$$w0rd",  # use for windows
+    # password="",  # use for mac
     database="week11_hwk"
 )
 
@@ -23,9 +23,13 @@ cursor = db.cursor()
 def home_page():
     time_now = datetime.now()
     time_slot = get_time_slot(time_now.hour)
+    # for the menu - portfolio dropdown so it can populate with the dynamic value retrieved from the db
     cursor = db.cursor()
+    # gets the distinct rows from the db
     cursor.execute("SELECT DISTINCT Portfoliouser FROM portfolio")
+    # iterates over the rows to get the first column of each row
     portfoliousers = [row[0] for row in cursor.fetchall()]
+    # turns the output into a string which can then be populated
     portfolioruser_str = portfoliousers[0]
     return render_template('home.html', title='Home', time_slot=time_slot, portfoliousers=portfolioruser_str)
 
@@ -56,6 +60,7 @@ def contact_complete():
     return render_template('contact_complete.html', title='Contact Complete')
 
 
+# contact us form - posting the data input in the form to the db
 @app.route('/contact', methods=['POST'])
 def submit_contact_form():
         if request.method == 'POST':
@@ -63,6 +68,7 @@ def submit_contact_form():
             lastname = request.form['lname']
             email = request.form['email']
             comments = request.form['comments']
+            # checks if anything has been entered and populates a message if nothing entered
             if len(firstname) == 0 or len(lastname) == 0 or len(email) == 0 or len(comments) == 0:
                 error = 'Please complete all fields'
                 return render_template('contact.html', message=error)
@@ -72,9 +78,11 @@ def submit_contact_form():
                 values = (firstname, lastname, email, comments)
                 cursor.execute(sql, values)
                 db.commit()
+                # once done will redirect to completion page
                 return redirect(url_for('contact_complete'))
 
 
+# dynamic route for portfolio user using the value from the function
 @app.route('/portfolio_dynamic/<portfoliouser>')
 def user_portfolio(portfoliouser):
     portfolios = get_portfolio_user(portfoliouser)
@@ -85,4 +93,5 @@ def user_portfolio(portfoliouser):
         return render_template('portfolio_dynamic.html', portfolios=portfolios)
     except Exception as e:
             print("Error rendering template:", e)
+            # 500 is an internal server error http status code
             return "An error occurred while rendering the template", 500
