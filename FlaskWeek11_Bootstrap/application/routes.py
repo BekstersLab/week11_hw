@@ -10,8 +10,8 @@ from FlaskWeek11_Bootstrap.application.utilities import get_portfolio_user
 db = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="Pa$$w0rd",  # use for windows
-    # password="",  # use for mac
+    # password="Pa$$w0rd",  # use for windows
+    password="",  # use for mac
     database="week11_hwk"
 )
 

@@ -15,8 +15,8 @@ def get_portfolio_user(portfoliouser):
     connection = mysql.connector.connect(
         host="localhost",
         user="root",
-        password="Pa$$w0rd",  # use for windows
-        # password="",  # use for mac
+        # password="Pa$$w0rd",  # use for windows
+        password="",  # use for mac
         database="week11_hwk"
     )
     cursor = connection.cursor(dictionary=True)
