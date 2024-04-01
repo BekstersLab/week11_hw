@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block body_content %}
+    <main>
+        <h1>{{ portfolios[0]['Portfoliouser'] }}'s Portfolio</h1>
+        {% for portfolio in portfolios %}
+        <div class="wrapper">
+            <section class="row">
+                <div class="col-12 portfolio-item colourway-1">
+                    <div class="row">
+                        <div class="col-12 portfolio-title">
+                            <a href="{{ portfolio['Projectlink'] }}" target="_blank">
+                                <h2>{{ portfolio['Projectheader'] }}</h2>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-5 image">
+                            <a href="{{ portfolio['Projectlink'] }}" alt="{{ portfolio['Projectheader'] }}" target="_blank">
+                                <img src="{{ url_for('static', filename = portfolio['imagelink']) }}">
+                            </a>
+                        </div>
+                        <div class="col-lg-7 text">
+                            <p>{{ portfolio['Projectparagraph1'] }}</p>
+                            <p>{{ portfolio['Projectparagraph2'] }}</p>
+                            <p>{{ portfolio['Projectparagraph3'] }}</p>
+                            <p>{{ portfolio['Projectparagraph4'] }}</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        {% endfor %}
+        <br>
+    </main>
+{% endblock %}

@@ -7,6 +7,9 @@
             <p id="central-text">Get in touch with us via the form below...</p>
             <br>
                 <form action="{{ url_for('submit_contact_form')}}" target="_self" autocomplete="on" method="post">
+                    <div class= 'error-message' id="message">
+                        {{message}}
+                     </div>
                     <label for="fname">First name:</label><br>
                     <input type="text" id="fname" name="fname"><br>
                     <label for="lname">Last name:</label><br>
