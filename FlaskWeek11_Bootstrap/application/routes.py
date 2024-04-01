@@ -5,7 +5,7 @@ from application.utilities import get_time_slot
 
 import mysql.connector
 
-from FlaskWeek11_Bootstrap.application.utilities import get_portfolio_user
+from FlaskWeek11_Bootstrap.application.utilities import get_portfolio_user, distinct_portfolio_user
 
 db = mysql.connector.connect(
     host="localhost",
@@ -23,15 +23,8 @@ cursor = db.cursor()
 def home_page():
     time_now = datetime.now()
     time_slot = get_time_slot(time_now.hour)
-    # for the menu - portfolio dropdown so it can populate with the dynamic value retrieved from the db
-    cursor = db.cursor()
-    # gets the distinct rows from the db
-    cursor.execute("SELECT DISTINCT Portfoliouser FROM portfolio")
-    # iterates over the rows to get the first column of each row
-    portfoliousers = [row[0] for row in cursor.fetchall()]
-    # turns the output into a string which can then be populated
-    portfolioruser_str = portfoliousers[0]
-    return render_template('home.html', title='Home', time_slot=time_slot, portfoliousers=portfolioruser_str)
+    portfoliouser = distinct_portfolio_user()
+    return render_template('home.html', title='Home', time_slot=time_slot, portfoliousers=portfoliouser)
 
 
 @app.route('/about')
