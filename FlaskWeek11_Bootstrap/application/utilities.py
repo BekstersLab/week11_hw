@@ -34,8 +34,6 @@ def get_portfolio_user(portfoliouser):
     """
     cursor.execute(sql, (portfoliouser,))
     result_set = cursor.fetchall()
-    cursor.close()
-    connection.close()
     return result_set
 
 print(get_portfolio_user('katy'))

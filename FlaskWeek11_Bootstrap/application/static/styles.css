@@ -109,7 +109,6 @@ body {
 /* ////// FOOTER ////// */
 
 footer {
-    /* position: fixed-bottom; */
     font-family: "Montserrat", sans-serif; /* set a Google font of Montserrat or sans-serif if not available */
     font-weight: 500;
     color: #FFFFFF; /* set colour of footer text to white */
@@ -234,13 +233,6 @@ input[type="submit"]:hover {
     font-weight: bold;
 }
 
-.footer-bs{
-      position: absolute;
-      width: 100%;
-      min-height: 320px;
-      bottom: 40px;
-      left: 0;
-}
 
 /* ////// MEDIA QUERIES ////// */
 

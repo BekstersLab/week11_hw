@@ -27,10 +27,8 @@ Projectlink text
 
 insert into portfolio(Portfoliouser, imagelink, Projectheader, Projectparagraph1, Projectparagraph2, Projectparagraph3, Projectparagraph4, Projectlink)
 values ('Katy', 'image/katy-images/object_oriented_programming_outline_diagram-1.webp', 'Week 9 Homework', 'Learning more about databases', 'We practiced creating views', 'We were then given homework!', 'The home was to create our library database with two views and two stored procedures', 'https://github.com/Jiyabharti/Libraryv1'),
-('Katy', 'image/katy-images/catonabook.jpeg', 'Week 6 Homework', 'We were learning all about Object Orientated Programming OOP', 'OOP has been the hardest thing to learn so far!! Hence it taking two weeks of sessions!',"We've been understanding classes, methods, inheritance, polymorphism, encapsulation.", 'We revisited our banking apps and rock, paper,scissors', 'https://github.com/Jiyabharti/week6hwk/tree/katy_branch">Our homework for week 6');
+('Katy', 'image/katy-images/catonabook.jpeg', 'Week 6 Homework', 'We were learning all about Object Orientated Programming OOP', 'OOP has been the hardest thing to learn so far!! Hence it taking two weeks of sessions!',"We've been understanding classes, methods, inheritance, polymorphism, encapsulation.", 'We revisited our banking apps and rock, paper,scissors', 'https://github.com/Jiyabharti/week6hwk">Our homework for week 6');
 
 select * from portfolio;
 
-update portfolio
-set Portfoliouser = 'Katy'
-where ProjectID = 1;
+

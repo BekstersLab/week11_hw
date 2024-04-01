@@ -23,18 +23,9 @@ cursor = db.cursor()
 def home_page():
     time_now = datetime.now()
     time_slot = get_time_slot(time_now.hour)
-    connection = mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password="Pa$$w0rd",  # use for windows
-        # password="",  # use for mac
-        database="week11_hwk"
-    )
-    cursor = connection.cursor()
+    cursor = db.cursor()
     cursor.execute("SELECT DISTINCT Portfoliouser FROM portfolio")
     portfoliousers = [row[0] for row in cursor.fetchall()]
-    cursor.close()
-    connection.close()
     portfolioruser_str = portfoliousers[0]
     return render_template('home.html', title='Home', time_slot=time_slot, portfoliousers=portfolioruser_str)
 
