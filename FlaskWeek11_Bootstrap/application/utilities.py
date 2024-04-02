@@ -1,6 +1,6 @@
 import mysql.connector
 
-git 
+
 # define function to determine morning, afternoon or evening based on current time (hour)
 def get_time_slot(time):
     if time < 12:
