@@ -1,6 +1,8 @@
 from flask import render_template, url_for, request, redirect
 from application import app
+# import datetime class from datetime module
 from datetime import datetime
+# import the get_time_slot function from utilities.py module
 from application.utilities import get_time_slot
 
 import mysql.connector
@@ -17,12 +19,21 @@ db = mysql.connector.connect(
 
 cursor = db.cursor()
 
-
+# app.route decorator tells Flask what url should trigger the home_page() function
 @app.route('/')
 @app.route('/home')
 def home_page():
+    # get the current date and time
     time_now = datetime.now()
+    # refers to get_time_slot function in utilites to determine time of day, (morning, afternoon or evening) based on hour returned
     time_slot = get_time_slot(time_now.hour)
+    # '/' and '/home' urls trigger the 'home_page' function
+    # app uses 'datetime' to get current time
+    # get_time_slot function in utilities.py assigns time of day to a time slot (morning, afternoon, evening)
+    # Jinja2 template dynamically generates html content (on home page)
+    # uses time_slot variable in double braces to give a personalised greeting (on otherwise static home page)
+
+
     cursor = db.cursor()
     cursor.execute("SELECT DISTINCT Portfoliouser FROM portfolio")
     portfoliousers = [row[0] for row in cursor.fetchall()]

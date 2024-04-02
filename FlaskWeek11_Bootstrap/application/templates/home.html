@@ -1,9 +1,10 @@
-{% extends "layout.html" %}
-{% block body_content %}
+{% extends "layout.html" %} <!-- inherits from base layout template (layout.html) and extends it - consistent look across website -->
+{% block body_content %} <!-- define content for a block in the base layout template (body content) -->
     <main>
         <h1>Home</h1>
         <div class="wrapper">
         <section>
+            <!-- uses the time_slot variable passed from the Flask app (routes.py file) to display greeting with correct time slot -->
             <p>Good {{time_slot}}, welcome to our website!</p>
             <p>This application has been created by Katy and Bek for Week 11 homework on the SKY Get into Tech 15 week course.</p>
             <p>It has been written in Python with the Flask micro web framework, uses Jinga templates, Bootstrap 5 and is styled with CSS and Google Fonts.</p>

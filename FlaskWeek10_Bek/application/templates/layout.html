@@ -14,12 +14,15 @@
 <body>
     <div class="container-wrapper">
         <nav>
-            <a href="{{ nav_urls.home_url }}">Home</a>
-            <a href="{{ nav_urls.about_url }}">About</a>
-            <a href="{{ nav_urls.portfolio_url }}">Portfolio</a>
-            <a href="{{ nav_urls.contact_url }}">Contact</a>
+            <!-- dynamic links for the navigation menu. The 'href' attribute is set using Flask variables -->
+            <!-- content between curly brackets are placeholders that Flask replaces with urls when rendering the template -->
+            <a href="{{ nav_urls.home_url }}">Home</a> <!-- link to the Home page -->
+            <a href="{{ nav_urls.about_url }}">About</a> <!-- link to the about page -->
+            <a href="{{ nav_urls.portfolio_url }}">Portfolio</a> <!-- link to the portfolio page -->
+            <a href="{{ nav_urls.contact_url }}">Contact</a> <!-- link to the contact page -->
         </nav>
 
+        <!-- placeholder for child templates to insert custom content -->
         {% block body_content %}
         {% endblock %}
 
